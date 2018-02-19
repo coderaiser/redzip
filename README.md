@@ -43,7 +43,7 @@ const token = 'token';
 const path = '/';
 const type = 'raw';
 
-const readbox = require('@coderaiser/readbox');
+const readbox = require('readbox');
 
 readbox(token, path, {type, sort, order}, (e, stream) => {
     if (error)
