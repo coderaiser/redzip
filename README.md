@@ -43,9 +43,9 @@ const token = 'token';
 const path = '/';
 const type = 'raw';
 
-const read = require('@coderaiser/readbox');
+const readbox = require('@coderaiser/readbox');
 
-readDir(token, path, {type, sort, order}, (e, stream) => {
+readbox(token, path, {type, sort, order}, (e, stream) => {
     if (error)
         return console.error(e);
     
@@ -69,7 +69,7 @@ readDir(token, path, {type, sort, order}, (e, stream) => {
     }
 });
 
-read(token, '/dropbox.html', (e, stream) => {
+readbox(token, '/dropbox.html', (e, stream) => {
     if (e)
         return console.error(e);
     
@@ -82,7 +82,7 @@ read(token, '/dropbox.html', (e, stream) => {
 In old `node.js` environments that not supports `es2017`, `readbox` can be used with:
 
 ```js
-var read = require('readbox/legacy');
+var readbox = require('readbox/legacy');
 ```
 
 ## Related
