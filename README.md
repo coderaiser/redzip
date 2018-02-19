@@ -22,9 +22,9 @@ npm i readbox
 
 ## API
 
-All functions requires [token](https://blogs.readbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) as first parameter
+`readbox` requires [token](https://blogs.readbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/) as first parameter
 
-### read(token, path[, options], fn)
+### readbox(token, path[, options], fn)
 
 - **token** - `string`
 - **path** - `string`
