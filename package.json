@@ -19,7 +19,7 @@
     "lint": "eslint lib test",
     "build": "babel lib -d legacy",
     "wisdom": "redrun build legacy",
-    "legacy": "echo \"require('./readbox')\"> legacy/index.js"
+    "legacy": "echo \"module.exports = require('./readbox')\"> legacy/index.js"
   },
   "dependencies": {
     "currify": "^2.0.6",
