@@ -1,0 +1,58 @@
+{
+  "name": "readbox",
+  "version": "1.0.0",
+  "main": "lib/readbox.js",
+  "description": "dropbox read directory or file",
+  "author": "",
+  "homepage": "http://github.com/coderaiser/readbox",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/readbox.git"
+  },
+  "scripts": {
+    "test": "tape 'test/*.js'",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc npm test",
+    "watch:coverage": "npm run watcher -- npm run coverage",
+    "watch:test": "npm run watcher -- npm test",
+    "watcher": "nodemon -w test -w lib --exec",
+    "lint": "eslint lib test",
+    "build": "babel lib -d legacy",
+    "wisdom": "redrun build legacy",
+    "legacy": "echo \"require('./readbox')\"> legacy/index.js"
+  },
+  "dependencies": {
+    "currify": "^2.0.6",
+    "dropbox-stream": "^2.0.0",
+    "dropboxify": "^1.0.2",
+    "es6-promisify": "^6.0.0",
+    "squad": "^2.0.0",
+    "string-to-stream": "^1.1.0",
+    "try-to-catch": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "clear-module": "^2.1.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.16.0",
+    "fast-async": "^6.3.0",
+    "mock-require": "^3.0.1",
+    "nodemon": "^1.14.11",
+    "nyc": "^11.4.1",
+    "pullout": "^1.0.2",
+    "redrun": "^5.10.0",
+    "sinon": "^4.2.2",
+    "sinon-called-with-diff": "^2.0.0",
+    "tape": "^4.6.3"
+  },
+  "keywords": [
+    "directory",
+    "read",
+    "readdir",
+    "readify",
+    "file",
+    "folder"
+  ],
+  "license": "MIT"
+}
