@@ -90,6 +90,7 @@ var read = require('readbox/legacy');
 - [readify](https://github.com/coderaiser/readify "readify") - read directory content with file attributes: size, date, owner, mode
 - [flop](https://github.com/coderaiser/flop "flop") - FoLder OPerations
 - [dropboxify](https://github.com/coderaiser/dropboxify "dropboxify") - read directory content from readbox compatible way with `readify`
+- [dropbox](https://github.com/cloudcmd/dropbox "dropbox") - Dropbox files and folders CRUD
 
 ## License
 
