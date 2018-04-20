@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "node": 4
       },
@@ -10,6 +10,6 @@
     }],
   ],
   "plugins": [
-    "fast-async"
+    "module:fast-async"
   ]
 }
