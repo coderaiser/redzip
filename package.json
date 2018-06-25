@@ -36,7 +36,7 @@
     "@babel/preset-env": "^7.0.0-beta.44",
     "clear-module": "^2.1.0",
     "coveralls": "^3.0.0",
-    "eslint": "^4.16.0",
+    "eslint": "^5.0.0",
     "fast-async": "^7.0.4",
     "mock-require": "^3.0.1",
     "nodemon": "^1.14.11",
