@@ -41,7 +41,7 @@
     "mock-require": "^3.0.1",
     "nodemon": "^1.14.11",
     "nyc": "^13.0.1",
-    "pullout": "^1.0.2",
+    "pullout": "^2.0.0",
     "redrun": "^6.0.0",
     "sinon": "^6.0.0",
     "sinon-called-with-diff": "^2.0.0",
