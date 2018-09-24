@@ -34,7 +34,7 @@
     "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
-    "clear-module": "^2.1.0",
+    "clear-module": "^3.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^5.0.0",
     "fast-async": "^7.0.4",
