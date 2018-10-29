@@ -1,3 +1,23 @@
+2018.10.29, v2.0.0
+
+feature:
+- (package) sinon v7.1.0
+- (readbox) es2018-ify
+- (package) currify v3.0.0
+- (readbox) drop support of node < 8
+- (package) dropboxify v2.0.0
+- (package) redrun v7.0.0
+- (package) pullout v2.0.0
+- (package) clear-module v3.0.0
+- (package) nyc v13.0.1
+- (package) squad v3.0.0
+- (package) eslint v5.0.0
+- (package) sinon v6.0.0
+- (package) sinon v5.0.3
+- (package) fast-async v7.0.4
+- (package) redrun v6.0.0
+
+
 2018.02.19, v1.0.1
 
 feature:
