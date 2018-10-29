@@ -1,16 +1,18 @@
 'use strict';
 
+const {promisify} = require('util');
 const test = require('tape');
-const read = require('..');
 const currify = require('currify');
 const diff = require('sinon-called-with-diff');
 const sinon = diff(require('sinon'));
-const {promisify} = require('es6-promisify');
 const squad = require('squad');
 const stringToStream = require('string-to-stream');
+const mockRequire = require('mock-require');
+const tryToCatch = require('try-to-catch');
 
-const clean = require('clear-module');
-const stub = require('mock-require');
+const read = require('..');
+
+const {reRequire} = require('mock-require');
 
 const swap = currify((fn, a, b) => fn(b, a));
 const swapPromisify = squad(swap, promisify, require);
@@ -18,49 +20,48 @@ const pullout_ = swapPromisify('pullout');
 
 const stringify = (json) => JSON.stringify(json, null, 4);
 
-test('dropbox: no args', (t) => {
-    t.throws(read, /token should be a string!/, 'should throw when no token');
-    t.end();
-});
-
-test('dropbox: no path', (t) => {
-    const fn = () => read('token');
+test('dropbox: no args', async (t) => {
+    const [e] = await tryToCatch(read);
     
-    t.throws(fn, /path should be a string!/, 'should throw when no path');
+    t.equal(e.message, 'token should be a string!', 'should throw when no token');
     t.end();
 });
 
-test('dropbox: no fn', (t) => {
-    const fn = () => read('token', '/hello');
+test('dropbox: no path', async (t) => {
+    const [e] = await tryToCatch(read, 'token');
     
-    t.throws(fn, /fn should be a function!/, 'should throw when no path');
+    t.equal(e.message, 'path should be a string!', 'should throw when no path');
     t.end();
 });
 
-test('dropbox: read: error', (t) => {
+test('dropbox: no fn', async (t) => {
+    const [e] = await tryToCatch(read, 'token', '/hello');
+    
+    t.equal(e.message, 'fn should be a function!', 'should throw when no path');
+    t.end();
+});
+
+test('dropbox: read: error', async (t) => {
     const token = 'token';
     const path = '/';
     const error = Error('hello');
     const options = {};
     
     const createDropboxDownloadStream = sinon.stub();
-    const dropboxify = (token, path, options, fn) => {
-        fn(error);
+    const dropboxify = async () => {
+        throw error
     };
     
-    clean('..');
-    
-    stub('dropboxify', dropboxify);
-    stub('dropbox-stream', {
+    mockRequire('dropboxify', dropboxify);
+    mockRequire('dropbox-stream', {
         createDropboxDownloadStream
     });
     
-    const read = require('..');
+    const read = reRequire('..');
     
-    read(token, path, options, (e) => {
-        t.equal(e, error, 'should return error');
-        t.end();
-    });
+    const [e] = await tryToCatch(read, token, path, options);
+    t.equal(e, error, 'should return error');
+    t.end();
 });
 
 test('dropbox: read: not dir', (t) => {
@@ -72,18 +73,16 @@ test('dropbox: read: not dir', (t) => {
         .stub()
         .returns(stringToStream(file));
     
-    const dropboxify = (token, path, options, fn) => {
-        fn(Error('path/not_folder/'));
+    const dropboxify = async () => {
+        throw Error('path/not_folder/');
     };
     
-    clean('..');
-    
-    stub('dropboxify', dropboxify);
-    stub('dropbox-stream', {
+    mockRequire('dropboxify', dropboxify);
+    mockRequire('dropbox-stream', {
         createDropboxDownloadStream
     });
     
-    const read = promisify(require('..'));
+    const read = reRequire('..');
     const equal = currify((a, b) => {
         t.equal(a, b, 'should equal');
     });
@@ -107,18 +106,16 @@ test('dropbox: read: result', (t) => {
     const createDropboxDownloadStream = sinon
         .stub()
     
-    const dropboxify = (token, path, options, fn) => {
-        fn(null, list);
+    const dropboxify = async () => {
+        return list;
     };
     
-    clean('..');
-    
-    stub('dropboxify', dropboxify);
-    stub('dropbox-stream', {
+    mockRequire('dropboxify', dropboxify);
+    mockRequire('dropbox-stream', {
         createDropboxDownloadStream
     });
     
-    const read = promisify(require('..'));
+    const read = reRequire('..');
     
     const equal = currify((a, b) => {
         t.equal(a, b, 'should equal');

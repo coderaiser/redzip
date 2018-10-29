@@ -45,44 +45,31 @@ const type = 'raw';
 
 const readbox = require('readbox');
 
-readbox(token, path, {type, sort, order}, (e, stream) => {
+await readbox(token, path, {type, sort, order})
     if (error)
         return console.error(e);
-    
-    stream.pipe(process.stdout)
-    // outputs
-    {
-        path: "/",
-        files: [{
-            name: 'readbox.js',
-            size: 4735,
-            date: 1377248899000,
-            owner: 0,
-            mode: 0
-        }, {
-            name: 'readify.js',
-            size: 3735,
-            date: 1377248899000,
-            owner: 0,
-            mode: 0
-        }];
-    }
-});
 
-readbox(token, '/dropbox.html', (e, stream) => {
-    if (e)
-        return console.error(e);
-    
-    stream.pipe(process.stdout);
-});
-```
+stream.pipe(process.stdout)
+// outputs
+{
+    path: "/",
+    files: [{
+        name: 'readbox.js',
+        size: 4735,
+        date: 1377248899000,
+        owner: 0,
+        mode: 0
+    }, {
+        name: 'readify.js',
+        size: 3735,
+        date: 1377248899000,
+        owner: 0,
+        mode: 0
+    }];
+}
 
-## Environments
-
-In old `node.js` environments that not supports `es2017`, `readbox` can be used with:
-
-```js
-var readbox = require('readbox/legacy');
+const stream = await readbox(token, '/dropbox.html');
+stream.pipe(process.stdout);
 ```
 
 ## Related
