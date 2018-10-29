@@ -34,13 +34,6 @@ test('dropbox: no path', async (t) => {
     t.end();
 });
 
-test('dropbox: no fn', async (t) => {
-    const [e] = await tryToCatch(read, 'token', '/hello');
-    
-    t.equal(e.message, 'fn should be a function!', 'should throw when no path');
-    t.end();
-});
-
 test('dropbox: read: error', async (t) => {
     const token = 'token';
     const path = '/';
