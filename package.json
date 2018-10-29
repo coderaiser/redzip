@@ -22,7 +22,7 @@
     "legacy": "echo \"module.exports = require('./readbox')\"> legacy/index.js"
   },
   "dependencies": {
-    "currify": "^2.0.6",
+    "currify": "^3.0.0",
     "dropbox-stream": "^2.0.0",
     "dropboxify": "^2.0.0",
     "es6-promisify": "^6.0.0",
