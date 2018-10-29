@@ -24,7 +24,7 @@
   "dependencies": {
     "currify": "^2.0.6",
     "dropbox-stream": "^2.0.0",
-    "dropboxify": "^1.0.2",
+    "dropboxify": "^2.0.0",
     "es6-promisify": "^6.0.0",
     "squad": "^3.0.0",
     "string-to-stream": "^1.1.0",
