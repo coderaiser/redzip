@@ -45,9 +45,7 @@ const type = 'raw';
 
 const readbox = require('readbox');
 
-await readbox(token, path, {type, sort, order})
-    if (error)
-        return console.error(e);
+const stream = await readbox(token, path, {type, sort, order})
 
 stream.pipe(process.stdout)
 // outputs
