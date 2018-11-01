@@ -19,7 +19,6 @@
     "lint": "eslint lib test"
   },
   "dependencies": {
-    "currify": "^3.0.0",
     "dropbox-stream": "^2.0.0",
     "dropboxify": "^2.0.0",
     "squad": "^3.0.0",

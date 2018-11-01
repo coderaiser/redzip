@@ -46,6 +46,9 @@ const type = 'raw';
 const readbox = require('readbox');
 
 const stream = await readbox(token, path, {type, sort, order})
+console.log(stream.type);
+// outputs
+'directory'
 
 stream.pipe(process.stdout)
 // outputs
@@ -67,6 +70,10 @@ stream.pipe(process.stdout)
 }
 
 const stream = await readbox(token, '/dropbox.html');
+console.log(stream.type);
+// outputs
+'file'
+
 stream.pipe(process.stdout);
 ```
 
