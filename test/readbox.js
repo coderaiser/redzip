@@ -1,7 +1,5 @@
 'use strict';
 
-const {promisify} = require('util');
-
 const tryTo = require('try-to-tape');
 const test = tryTo(require('tape'));
 const diff = require('sinon-called-with-diff');
@@ -13,7 +11,7 @@ const tryToCatch = require('try-to-catch');
 const read = require('..');
 
 const {reRequire} = require('mock-require');
-const pullout = promisify(require('pullout'));
+const pullout = require('pullout');
 
 const stringify = (json) => JSON.stringify(json, null, 4);
 
