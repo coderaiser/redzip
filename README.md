@@ -32,6 +32,7 @@ npm i readbox
   - `sort` - sort by: name, size, date
   - `order` - "asc" or "desc" for ascending and descending order (default: "asc")
   - `type` - when "raw" returns not formatted result
+  - `root` - root directory to cut from result
 - **fn** - `function` callback
 
 #### Example

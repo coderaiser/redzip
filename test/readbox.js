@@ -1,7 +1,9 @@
 'use strict';
 
 const {promisify} = require('util');
-const test = require('tape');
+
+const tryTo = require('try-to-tape');
+const test = tryTo(require('tape'));
 const diff = require('sinon-called-with-diff');
 const sinon = diff(require('sinon'));
 const stringToStream = require('string-to-stream');
@@ -83,7 +85,8 @@ test('dropbox: read: result', async (t) => {
     const token = 'token';
     const path = '/';
     const list = {
-        hello: 'world'
+        path,
+        files: [],
     };
     
     const createDropboxDownloadStream = sinon
@@ -113,7 +116,8 @@ test('dropbox: read: result: type: directory', async (t) => {
     const token = 'token';
     const path = '/';
     const list = {
-        hello: 'world'
+        path,
+        files: [],
     };
     
     const createDropboxDownloadStream = sinon
@@ -132,6 +136,36 @@ test('dropbox: read: result: type: directory', async (t) => {
     const {type} = await read(token, path);
     
     t.equal(type, 'directory', 'should equal');
+    t.end();
+});
+
+test('dropbox: read: result: type: directory: root', async (t) => {
+    const token = 'token';
+    const path = '/hello/world';
+    const list = {
+        path,
+        files: [],
+    };
+    
+    const createDropboxDownloadStream = sinon
+        .stub()
+    
+    const dropboxify = async () => list;
+    
+    mockRequire('dropboxify', dropboxify);
+    mockRequire('dropbox-stream', {
+        createDropboxDownloadStream
+    });
+    
+    const read = reRequire('..');
+    const stream = await read(token, path, {
+        root: '/hello',
+    });
+    
+    const str = await pullout(stream, 'string');
+    const json = JSON.parse(str);
+    
+    t.equal(json.path, '/world', 'should equal');
     t.end();
 });
 

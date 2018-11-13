@@ -35,7 +35,8 @@
     "redrun": "^7.0.0",
     "sinon": "^7.1.0",
     "sinon-called-with-diff": "^3.0.0",
-    "tape": "^4.6.3"
+    "tape": "^4.6.3",
+    "try-to-tape": "^1.0.0"
   },
   "keywords": [
     "directory",
