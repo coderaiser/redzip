@@ -19,7 +19,7 @@
     "lint": "eslint lib test"
   },
   "dependencies": {
-    "dropbox-stream": "^2.0.0",
+    "@cloudcmd/dropbox": "^4.0.3",
     "dropboxify": "^2.0.0",
     "squad": "^3.0.0",
     "string-to-stream": "^1.1.0",
