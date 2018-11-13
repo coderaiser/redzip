@@ -1,3 +1,11 @@
+2018.11.13, v2.2.0
+
+feature:
+- (package) dropbox-stream -> @cloudcmd/dropbox
+- (readbox) add root support
+- (package) sinon-called-with-diff v3.0.0
+
+
 2018.11.01, v2.1.0
 
 feature:
