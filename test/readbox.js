@@ -2,8 +2,7 @@
 
 const tryTo = require('try-to-tape');
 const test = tryTo(require('tape'));
-const diff = require('sinon-called-with-diff');
-const sinon = diff(require('sinon'));
+const stub = require('@cloudcmd/stub');
 const stringToStream = require('string-to-stream');
 const mockRequire = require('mock-require');
 const tryToCatch = require('try-to-catch');
@@ -35,7 +34,7 @@ test('dropbox: read: error', async (t) => {
     const error = Error('hello');
     const options = {};
     
-    const createReadStream = sinon.stub();
+    const createReadStream = stub();
     const dropboxify = async () => {
         throw error
     };
@@ -57,8 +56,7 @@ test('dropbox: read: not dir', async (t) => {
     const path = '/';
     const file = 'hello';
     
-    const createReadStream = sinon
-        .stub()
+    const createReadStream = stub()
         .returns(stringToStream(file));
     
     const dropboxify = async () => {
@@ -87,8 +85,7 @@ test('dropbox: read: result', async (t) => {
         files: [],
     };
     
-    const createDropboxDownloadStream = sinon
-        .stub()
+    const createDropboxDownloadStream = stub();
     
     const dropboxify = async () => {
         return list;
@@ -118,12 +115,8 @@ test('dropbox: read: result: type: directory', async (t) => {
         files: [],
     };
     
-    const createDropboxDownloadStream = sinon
-        .stub()
-    
-    const dropboxify = async () => {
-        return list;
-    };
+    const createDropboxDownloadStream = stub();
+    const dropboxify = async () => list;
     
     mockRequire('dropboxify', dropboxify);
     mockRequire('dropbox-stream', {
@@ -145,9 +138,7 @@ test('dropbox: read: result: type: directory: root', async (t) => {
         files: [],
     };
     
-    const createDropboxDownloadStream = sinon
-        .stub()
-    
+    const createDropboxDownloadStream = stub();
     const dropboxify = async () => list;
     
     mockRequire('dropboxify', dropboxify);
@@ -172,8 +163,7 @@ test('dropbox: read: not dir: type: file', async (t) => {
     const path = '/';
     const file = 'hello';
     
-    const createReadStream = sinon
-        .stub()
+    const createReadStream = stub()
         .returns(stringToStream(file));
     
     const dropboxify = async () => {
