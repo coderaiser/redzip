@@ -10,13 +10,14 @@
     "url": "git://github.com/coderaiser/readbox.git"
   },
   "scripts": {
-    "test": "tape 'test/*.js'",
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "coverage": "nyc npm test",
-    "watch:coverage": "npm run watcher -- npm run coverage",
-    "watch:test": "npm run watcher -- npm test",
-    "watcher": "nodemon -w test -w lib --exec",
-    "lint": "eslint lib test"
+    "test": "madrun test",
+    "report": "madrun report",
+    "coverage": "madrun coverage",
+    "watch:coverage": "madrun watch:coverage",
+    "watch:test": "madrun watch:test",
+    "watcher": "madrun watcher",
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
     "@cloudcmd/dropbox": "^4.0.3",
@@ -29,11 +30,16 @@
     "@cloudcmd/stub": "^2.1.2",
     "coveralls": "^3.0.0",
     "eslint": "^5.0.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-putout": "^2.0.1",
+    "madrun": "^3.0.6",
     "mock-require": "^3.0.1",
     "nodemon": "^1.14.11",
     "nyc": "^13.0.1",
-    "pullout": "^3.0.0",
+    "pullout": "^4.0.0",
+    "putout": "^6.15.1",
     "redrun": "^7.0.0",
+    "supertape": "^1.2.3",
     "tape": "^4.6.3",
     "try-to-tape": "^1.0.0"
   },
