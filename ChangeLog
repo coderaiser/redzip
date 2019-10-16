@@ -1,3 +1,16 @@
+2019.10.16, v2.2.1
+
+feature:
+- (readbox) madrun
+- (package) eslint v6.5.1
+- (package) nyc v14.1.1
+- (package) string-to-stream v3.0.1
+- (package) pullout v4.0.0
+- (package) try-to-catch v2.0.0
+- (package) sinon, sinon-called-with-diff -> @cloudcmd/stub
+- (package) pullout v3.0.0
+
+
 2018.11.13, v2.2.0
 
 feature:
