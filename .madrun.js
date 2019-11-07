@@ -9,7 +9,7 @@ module.exports = {
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': () => run('watcher', 'npm test'),
     'watcher': () => 'nodemon -w test -w lib --exec',
-    'lint': () => 'putout lib test madrun.js',
+    'lint': () => 'putout lib test .madrun.js',
     'fix:lint': () => run('lint', '--fix'),
 };
 
