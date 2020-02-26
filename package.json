@@ -24,7 +24,7 @@
     "dropboxify": "^2.0.0",
     "squad": "^3.0.0",
     "string-to-stream": "^3.0.1",
-    "try-to-catch": "^2.0.0"
+    "try-to-catch": "^3.0.0"
   },
   "devDependencies": {
     "@cloudcmd/stub": "^2.1.2",
