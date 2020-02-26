@@ -1,6 +1,6 @@
 {
   "name": "readbox",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "main": "lib/readbox.js",
   "description": "dropbox read directory or file",
   "author": "",
@@ -38,7 +38,6 @@
     "nyc": "^15.0.0",
     "pullout": "^4.0.0",
     "putout": "^7.0.2",
-    "redrun": "^7.0.0",
     "supertape": "^1.2.3",
     "tape": "^4.6.3",
     "try-to-tape": "^1.0.0"
