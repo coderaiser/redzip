@@ -8,7 +8,7 @@ const tryToCatch = require('try-to-catch');
 
 const read = require('..');
 
-const {reRequire} = require('mock-require');
+const {reRequire} = mockRequire;
 const pullout = require('pullout');
 
 const stringify = (json) => JSON.stringify(json, null, 4);
