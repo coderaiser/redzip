@@ -9,6 +9,12 @@
     "type": "git",
     "url": "git://github.com/coderaiser/readbox.git"
   },
+  "nyc": {
+    "exclude": [
+      "test",
+      ".*.js"
+    ]
+  },
   "scripts": {
     "test": "madrun test",
     "report": "madrun report",
