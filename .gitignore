@@ -5,5 +5,5 @@ coverage
 yarn-error.log
 .nyc_output
 *.swp
-legacy
 
+.putoutcache

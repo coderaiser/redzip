@@ -1,19 +1,13 @@
 {
-  "name": "readbox",
-  "version": "2.2.2",
-  "main": "lib/readbox.js",
+  "name": "readzip",
+  "version": "1.0.0",
+  "main": "lib/readzip.js",
   "description": "dropbox read directory or file",
   "author": "",
-  "homepage": "http://github.com/coderaiser/readbox",
+  "homepage": "http://github.com/coderaiser/readzip",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/readbox.git"
-  },
-  "nyc": {
-    "exclude": [
-      "test",
-      ".*.js"
-    ]
+    "url": "git://github.com/coderaiser/readzip.git"
   },
   "scripts": {
     "test": "madrun test",
@@ -23,28 +17,34 @@
     "watch:test": "madrun watch:test",
     "watcher": "madrun watcher",
     "lint": "madrun lint",
+    "fresh:lint": "madrun fresh:lint",
+    "lint:fresh": "madrun lint:fresh",
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
     "@cloudcmd/dropbox": "^4.0.3",
     "dropboxify": "^2.0.0",
+    "once": "^1.4.0",
     "squad": "^3.0.0",
     "string-to-stream": "^3.0.1",
-    "try-to-catch": "^3.0.0"
+    "try-to-catch": "^3.0.0",
+    "wraptile": "^3.0.0",
+    "yauzl": "^2.10.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.12.1",
     "@cloudcmd/stub": "^3.1.0",
     "coveralls": "^3.0.0",
     "eslint": "^7.3.1",
     "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-putout": "^5.0.1",
-    "madrun": "^7.0.0",
+    "eslint-plugin-putout": "^6.11.1",
+    "madrun": "^8.3.8",
     "mock-require": "^3.0.1",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
     "pullout": "^4.0.0",
-    "putout": "^9.1.0",
-    "supertape": "^2.0.1"
+    "putout": "^13.1.2",
+    "supertape": "^4.4.0"
   },
   "keywords": [
     "directory",
@@ -56,7 +56,7 @@
     "dropbox"
   ],
   "engines": {
-    "node": ">=8.3"
+    "node": ">=14"
   },
   "license": "MIT"
 }
