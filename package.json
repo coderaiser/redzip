@@ -23,7 +23,10 @@
   },
   "dependencies": {
     "@cloudcmd/dropbox": "^4.0.3",
+    "@cloudcmd/sortify": "^2.0.1",
     "dropboxify": "^2.0.0",
+    "format-io": "^2.0.0",
+    "@cloudcmd/formatify": "^1.0.1",
     "once": "^1.4.0",
     "squad": "^3.0.0",
     "string-to-stream": "^3.0.1",
@@ -32,6 +35,7 @@
     "yauzl": "^2.10.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
     "@cloudcmd/stub": "^3.1.0",
     "coveralls": "^3.0.0",

@@ -12,14 +12,49 @@ const pullout = require('pullout');
 
 const stringify = (json) => JSON.stringify(json, null, 4);
 
-test('readzipzip: no path', async (t) => {
+test('readzip: no path', async (t) => {
     const [e] = await readzip();
     
     t.equal(e.message, 'path should be string!', 'should throw when no path');
     t.end();
 });
 
-test('readzipzip: readzip: open error', async (t) => {
+test('readzip: path without ":"', async (t) => {
+    const [e] = await readzip('/');
+    
+    t.equal(e.message, 'path should conaint ":" separatar beetween paths');
+    t.end();
+});
+
+test('readzip: wrong type', async (t) => {
+    const [e] = await readzip('/1.zip:/', {
+        type: 3
+    });
+    
+    t.equal(e.message, 'type should be a string or not to be defined!');
+    t.end();
+});
+
+test('readzip: wrong sort', async (t) => {
+    const [e] = await readzip('/1.zip:/', {
+        sort: 3
+    });
+    
+    t.equal(e.message, 'sort should be a string!');
+    t.end();
+});
+
+
+test('readzip: wrong order', async (t) => {
+    const [e] = await readzip('/1.zip:/', {
+        order: 'hello'
+    });
+    
+    t.equal(e.message, 'order can be "asc" or "desc" only!');
+    t.end();
+});
+
+test('readzip: open error', async (t) => {
     const path = '/:/';
     const error = Error('hello');
     const options = {};
@@ -41,7 +76,7 @@ test('readzipzip: readzip: open error', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: file', async (t) => {
+test('readzip: file', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'file.zip');
     
@@ -56,20 +91,22 @@ test('readzipzip: readzip: file', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: directory', async (t) => {
+test('readzip: directory', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'dir.zip');
     
     const readzip = reRequire('..');
     const path = `${zipPath}:${sep}dir`;
     
-    const [, stream] = await readzip(path);
+    const [, stream] = await readzip(path, {
+        type: 'raw',
+    });
     
     const result = await pullout(stream, 'string');
     const expected = stringify([{
         name: 'hello.txt',
         size: 6,
-        date: 21_029,
+        date: '2021-01-04T22:00:00.000Z',
         owner: 'root',
         mode: 2_176_057_344,
         type: 'file',
@@ -79,22 +116,32 @@ test('readzipzip: readzip: directory', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: directory: nested', async (t) => {
+test('readzip: directory: nested', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'nested.zip');
     
     const readzip = reRequire('..');
     const path = `${zipPath}:${sep}nested`;
     
-    const [, stream] = await readzip(path);
+    const [, stream] = await readzip(path, {
+        type: 'raw',
+    });
     
     const result = await pullout(stream, 'string');
     const expected = stringify(
         [
             {
+                name: 'dir',
+                size: 0,
+                date: '2021-01-04T22:00:00.000Z',
+                owner: 'root',
+                mode: 1_107_099_648,
+                type: 'directory',
+            },
+            {
                 name: '.zip',
                 size: 1142,
-                date: 21_029,
+                date: '2021-01-04T22:00:00.000Z',
                 owner: 'root',
                 mode: 2_176_057_344,
                 type: 'file',
@@ -102,7 +149,7 @@ test('readzipzip: readzip: directory: nested', async (t) => {
             {
                 name: 'dir.zip',
                 size: 232,
-                date: 21_029,
+                date: '2021-01-04T22:00:00.000Z',
                 owner: 'root',
                 mode: 2_176_057_344,
                 type: 'file',
@@ -110,18 +157,10 @@ test('readzipzip: readzip: directory: nested', async (t) => {
             {
                 name: 'world.txt',
                 size: 6,
-                date: 21_029,
+                date: '2021-01-04T22:00:00.000Z',
                 owner: 'root',
                 mode: 2_176_057_344,
                 type: 'file',
-            },
-            {
-                name: 'dir',
-                size: 0,
-                date: 21_029,
-                owner: 'root',
-                mode: 1_107_099_648,
-                type: 'directory',
             },
         ],
     );
@@ -130,7 +169,7 @@ test('readzipzip: readzip: directory: nested', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: directory: with slash', async (t) => {
+test('readzip: directory: with slash', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'dir.zip');
     
@@ -142,10 +181,10 @@ test('readzipzip: readzip: directory: with slash', async (t) => {
     const result = await pullout(stream, 'string');
     const expected = stringify([{
         name: 'hello.txt',
-        size: 6,
-        date: 21_029,
+        size: '6b',
+        date: '05.01.2021',
         owner: 'root',
-        mode: 2_176_057_344,
+        mode: '--- --- ---',
         type: 'file',
     }]);
     
@@ -153,7 +192,7 @@ test('readzipzip: readzip: directory: with slash', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: file: type', async (t) => {
+test('readzip: file: type', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'file.zip');
     
@@ -167,7 +206,7 @@ test('readzipzip: readzip: file: type', async (t) => {
     t.end();
 });
 
-test('readzipzip: readzip: directory: type', async (t) => {
+test('readzip: directory: type', async (t) => {
     const dirPath = join(__dirname, 'fixture');
     const zipPath = join(dirPath, 'dir.zip');
     
