@@ -66,7 +66,7 @@ dirStream.pipe(process.stdout);
     }],
 });
 
-dirStream.files
+dirStream.files;
 // returns
 [{
     name: 'redzip.js',
@@ -82,7 +82,7 @@ dirStream.files
     mode: 0,
 }];
 
-dirStream.files.path
+dirStream.files.path;
 // returns
 '/';
 
@@ -93,7 +93,7 @@ console.log(fileStream.type);
 
 fileStream.pipe(process.stdout);
 // outputs
-'hello'
+'hello';
 ```
 
 ## Related

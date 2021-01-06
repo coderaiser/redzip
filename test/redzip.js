@@ -245,3 +245,18 @@ test('redzip: file: local: real path error', async (t) => {
     t.deepEqual(file, expected);
     t.end();
 });
+
+test('redzip: directory: root', async (t) => {
+    const dirPath = join(__dirname, 'fixture');
+    const zipPath = join(dirPath, 'dir.zip');
+    
+    const redzip = reRequire('..');
+    const {path} = await redzip.read(`${zipPath}${sep}`, {
+        root: dirPath,
+    });
+    
+    const expected = '/dir.zip/';
+    
+    t.deepEqual(path, expected);
+    t.end();
+});
