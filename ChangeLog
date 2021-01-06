@@ -1,0 +1,50 @@
+2021.01.06, v1.0.1
+
+fix:
+- (ChangeLog) rm
+
+feature:
+- (redzip) add readify
+- (readzip) add ability to sort and format
+- (package) madrun v7.0.0
+- (package) supertape v2.0.1
+- (package) putout v9.1.0
+- (package) eslint-plugin-putout v5.0.1
+- (package) eslint v7.3.1
+- (package) @cloudcmd/stub v3.1.0
+- (package) try-to-catch v3.0.0
+- (package) nodemon v2.0.2
+- (package) nyc v15.0.0
+- (package) eslint-plugin-node v11.0.0
+- (package) madrun v5.0.0
+- (package) putout v7.0.2
+- (package) eslint-plugin-putout v3.0.0
+- (readbox) madrun
+- (package) eslint v6.5.1
+- (package) nyc v14.1.1
+- (package) string-to-stream v3.0.1
+- (package) pullout v4.0.0
+- (package) try-to-catch v2.0.0
+- (package) sinon, sinon-called-with-diff -> @cloudcmd/stub
+- (package) pullout v3.0.0
+- (package) dropbox-stream -> @cloudcmd/dropbox
+- (readbox) add root support
+- (package) sinon-called-with-diff v3.0.0
+- (readbox) add support of stream type
+- (package) sinon v7.1.0
+- (readbox) es2018-ify
+- (package) currify v3.0.0
+- (readbox) drop support of node < 8
+- (package) dropboxify v2.0.0
+- (package) redrun v7.0.0
+- (package) pullout v2.0.0
+- (package) clear-module v3.0.0
+- (package) nyc v13.0.1
+- (package) squad v3.0.0
+- (package) eslint v5.0.0
+- (package) sinon v6.0.0
+- (package) sinon v5.0.3
+- (package) fast-async v7.0.4
+- (package) redrun v6.0.0
+- (package) keywrods: dropbox
+
