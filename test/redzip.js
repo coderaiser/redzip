@@ -273,3 +273,14 @@ test('redzip: directory: root', async (t) => {
     t.end();
 });
 
+test('redzip: directory: long path', async (t) => {
+    const redzip = reRequire('..');
+    const {path} = await redzip.read('/bin', {
+        root: '/',
+    });
+    
+    const expected = '/bin/';
+    
+    t.deepEqual(path, expected);
+    t.end();
+});
