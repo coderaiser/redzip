@@ -260,3 +260,16 @@ test('redzip: directory: root', async (t) => {
     t.deepEqual(path, expected);
     t.end();
 });
+
+test('redzip: directory: root', async (t) => {
+    const redzip = reRequire('..');
+    const {path} = await redzip.read('/', {
+        root: '/',
+    });
+    
+    const expected = '/';
+    
+    t.deepEqual(path, expected);
+    t.end();
+});
+
