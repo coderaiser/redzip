@@ -1,7 +1,7 @@
 import {run} from 'madrun';
 
 export default {
-    'test': () => 'tape \'test/*.js\'',
+    'test': () => `tape 'lib/**/*.spec.js'`,
     'report': () => 'nyc report --reporter=text-lcov | coveralls',
     'coverage': () => 'nyc npm test',
     'watch:coverage': () => run('watcher', 'npm run coverage'),

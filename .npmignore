@@ -1,6 +1,8 @@
 .*
+*.spec.js
 test
 coverage
+fixture
 
 *.swp
 yarn-error.log
