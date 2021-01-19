@@ -42,7 +42,7 @@ const path = '/home/coderaiser/hello.zip/hello.txt';
 
 const redzip = require('redzip');
 
-const dirStream = await redzip(dirPath, {type, sort, order});
+const dirStream = await redzip.read(dirPath, {type, sort, order});
 console.log(dirStream.type);
 // outputs
 'directory';
@@ -86,7 +86,7 @@ dirStream.files.path;
 // returns
 '/';
 
-const fileStream = await redzip(path);
+const fileStream = await redzip.read(path);
 console.log(fileStream.type);
 // outputs
 'file';
@@ -94,6 +94,29 @@ console.log(fileStream.type);
 fileStream.pipe(process.stdout);
 // outputs
 'hello';
+```
+
+### readSize(path[, options])
+
+- **path** - `string`
+- **options** - `object` can contain:
+  - `type` - when "raw" returns not formatted result
+
+#### Example
+
+```js
+const redzip = require('redzip');
+
+const dirPath = '/home/coderaiser/hello.zip/hello/';
+const size = await redzip.readSize(dirPath);
+// returns
+'10b';
+
+const rawSize = await redzip.readSize(dirPath, {
+    type: 'raw',
+});
+// returns
+10;
 ```
 
 ## Related
