@@ -1,3 +1,10 @@
+2021.01.20, v1.4.0
+
+feature:
+- (redfs) add ability to handle windows paths
+- (redzip) split local and zip vfs into separete directories
+
+
 2021.01.19, v1.3.0
 
 feature:
