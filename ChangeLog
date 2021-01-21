@@ -1,3 +1,9 @@
+2021.01.21, v1.5.0
+
+feature:
+- (redzip) avoid using win32 path sep in windows for zip
+
+
 2021.01.20, v1.4.0
 
 feature:
