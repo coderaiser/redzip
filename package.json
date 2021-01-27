@@ -32,7 +32,8 @@
     "trammel": "^5.0.0",
     "try-to-catch": "^3.0.0",
     "wraptile": "^3.0.0",
-    "yauzl": "^2.10.0"
+    "yauzl": "^2.10.0",
+    "yazl": "^2.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
