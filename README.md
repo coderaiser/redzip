@@ -102,21 +102,31 @@ fileStream.pipe(process.stdout);
 - **options** - `object` can contain:
   - `type` - when "raw" returns not formatted result
 
+### write(path[, data])
+
+- **path** - `string`
+- **data** - `stream`
+
 #### Example
 
 ```js
-const redzip = require('redzip');
+const {write} = require('redzip');
 
 const dirPath = '/home/coderaiser/hello.zip/hello/';
-const size = await redzip.readSize(dirPath);
+await write(dirPath);
 // returns
-'10b';
+'save: ok("hello")';
 
-const rawSize = await redzip.readSize(dirPath, {
-    type: 'raw',
-});
+const path = '/home/coderaiser/hello.zip/hello.txt';
+await write(path, Readable.from('hello'));
 // returns
-10;
+'save: ok("hello")';
+
+await read(path);
+// returns
+'hello';
+
+
 ```
 
 ## Related

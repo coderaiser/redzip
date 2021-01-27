@@ -1,11 +1,16 @@
 import {run} from 'madrun';
 
 export default {
-    'test': () => `tape 'lib/**/*.spec.js' -f tap`,
+    'test': () => `tape 'lib/**/*.spec.js'`,
     'report': () => 'nyc report --reporter=text-lcov | coveralls',
     'coverage': () => 'nyc npm test',
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': async () => await run('watcher', `"${await run('test')}"`),
+    
+    'watch:lint': async () => await run('watcher', `"${await run('lint', '--fix -f stream')}"`, {
+        ESLINT_CONFIG_FILE: '.eslintrc-ide.js',
+    }),
+    
     'watcher': () => 'nodemon -w test -w lib --exec',
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
