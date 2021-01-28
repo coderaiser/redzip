@@ -102,15 +102,18 @@ fileStream.pipe(process.stdout);
 - **options** - `object` can contain:
   - `type` - when "raw" returns not formatted result
 
-### write(path[, data])
+### write(path[, data], options)
 
 - **path** - `string`
 - **data** - `stream`
+- **options** - `object` can contain:
+  - `unzip` - unzip file content before writing
 
 #### Example
 
 ```js
-const {write} = require('redzip');
+import {write} from 'redzip';
+import pullout from 'pullout';
 
 const dirPath = '/home/coderaiser/hello.zip/hello/';
 await write(dirPath);
@@ -118,14 +121,22 @@ await write(dirPath);
 'save: ok("hello")';
 
 const path = '/home/coderaiser/hello.zip/hello.txt';
-await write(path, Readable.from('hello'));
+const writeStream = await write(path, Readable.from('hello'));
+await pullout(writeStream);
 // returns
 'save: ok("hello")';
 
-await read(path);
+await pullout(await read(path));
 // returns
 'hello';
 
+import {createGzip} from 'zlib';
+const zipStream = Readable.from('hello').pipe(createGzip());
+await write(path, zipStream);
+const readStream = await read(path);
+await pullout(readStream);
+// returns
+'hello';
 
 ```
 
