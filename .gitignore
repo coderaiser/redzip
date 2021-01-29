@@ -5,6 +5,5 @@ coverage
 yarn-error.log
 .nyc_output
 *.swp
-lib/zip/write/fixture
 
 .putoutcache
