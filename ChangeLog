@@ -1,3 +1,9 @@
+2021.01.29, v1.6.3
+
+fix:
+- (redzip) local: add ability to handle stream open event (EACESS emitted on open)
+
+
 2021.01.29, v1.6.2
 
 fix:
