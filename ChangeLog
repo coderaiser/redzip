@@ -1,3 +1,9 @@
+2021.01.29, v1.6.1
+
+fix:
+- (redzip) zip: write: directory: slash check -> no stream
+
+
 2021.01.28, v1.6.0
 
 feature:
