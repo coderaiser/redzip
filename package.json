@@ -39,6 +39,7 @@
     "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
     "@cloudcmd/stub": "^3.1.0",
+    "@iocmd/wait": "^1.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^7.3.1",
     "eslint-plugin-node": "^11.0.0",
