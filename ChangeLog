@@ -1,3 +1,9 @@
+2021.01.29, v1.6.2
+
+fix:
+- (redzip) rm tmp file on unzip error
+
+
 2021.01.29, v1.6.1
 
 fix:
