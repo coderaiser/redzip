@@ -1,7 +1,8 @@
 # Redzip [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
 [NPMIMGURL]: https://img.shields.io/npm/v/redzip.svg?style=flat
-[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/redzip/master.svg?style=flat
+[BuildStatusURL]: https://github.com/coderaiser/redzip/actions/runs/525234132
+[BuildStatusIMGURL]: https://github.com/coderaiser/redzip/workflows/CI/badge.svg
 [DependencyStatusIMGURL]: https://img.shields.io/david/coderaiser/redzip.svg?style=flat
 [LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
 [NPMURL]: https://npmjs.org/package/redzip "npm"
