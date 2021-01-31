@@ -24,4 +24,10 @@ jobs:
    
     - run: npm install
     - run: npm run lint
-    - run: npm run coverage && npm run report
+    - run: npm run coverage
+    - run: npm run report
+  
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
