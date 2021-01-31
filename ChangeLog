@@ -1,3 +1,9 @@
+2021.01.31, v1.6.4
+
+fix:
+- (redzip) write: create directory with no slash at then end (coderaiser/cloudcmd#319)
+
+
 2021.01.29, v1.6.3
 
 fix:
