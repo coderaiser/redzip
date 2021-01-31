@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
    
     - run: npm install
-    - run: npm run lint
+    - run: npm run fix:lint
     - run: npm run coverage
     - run: npm run report
   
@@ -31,3 +31,9 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - uses: EndBug/add-and-commit@v7
+      with:
+        message: 'chore(redzip) lint'
+        pull_strategy: '--rebase'
+
