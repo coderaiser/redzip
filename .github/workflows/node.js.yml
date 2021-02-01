@@ -1,15 +1,13 @@
 name: CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      NAME: redzip
 
     strategy:
       matrix:
@@ -34,5 +32,5 @@ jobs:
     
     - uses: EndBug/add-and-commit@v7
       with:
-        message: 'chore(redzip) lint'
+        message: 'chore(${{ env.NAME }}) lint'
 

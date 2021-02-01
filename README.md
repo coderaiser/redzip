@@ -138,7 +138,26 @@ const readStream = await read(path);
 await pullout(readStream);
 // returns
 'hello';
+```
 
+### remove(path[, data], options)
+
+- **path** - `string`
+- **data** - `stream`
+- **options** - `object` can contain:
+  - `unzip` - unzip file content before writing
+
+#### Example
+
+```js
+import {remove} from 'redzip';
+import pullout from 'pullout';
+
+const dirPath = '/home/coderaiser/hello.zip/hello/';
+await remove(dirPath);
+
+const path = '/home/coderaiser/hello.zip/hello.txt';
+await remove(path);
 ```
 
 ## Related
