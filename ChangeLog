@@ -1,3 +1,9 @@
+2021.02.01, v1.7.1
+
+feature:
+- (redzip) local: add support of EPERM
+
+
 2021.02.01, v1.7.0
 
 fix:
