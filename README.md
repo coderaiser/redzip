@@ -48,6 +48,10 @@ console.log(dirStream.type);
 // outputs
 'directory';
 
+console.log(dirStream.size);
+// outputs
+280
+
 dirStream.pipe(process.stdout);
 // outputs
 ({
