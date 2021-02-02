@@ -1,3 +1,9 @@
+2021.02.02, v1.8.0
+
+feature:
+- (redzip) read: add ability to return file size
+
+
 2021.02.01, v1.7.2
 
 fix:
