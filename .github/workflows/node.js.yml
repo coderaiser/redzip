@@ -33,5 +33,5 @@ jobs:
     - uses: EndBug/add-and-commit@v7
       with:
         branch: master
-        message: 'chore(${{ env.NAME }}) lint'
+        message: 'chore(${{ env.NAME }}) lint using actions'
 
