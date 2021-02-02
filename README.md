@@ -95,6 +95,10 @@ console.log(fileStream.type);
 fileStream.pipe(process.stdout);
 // outputs
 'hello';
+
+console.log(fileStream.size);
+// outputs
+6;
 ```
 
 ### readSize(path[, options])
