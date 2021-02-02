@@ -50,7 +50,7 @@ console.log(dirStream.type);
 
 console.log(dirStream.size);
 // outputs
-280
+280;
 
 dirStream.pipe(process.stdout);
 // outputs
