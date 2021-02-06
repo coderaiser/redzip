@@ -2,8 +2,8 @@ import {run} from 'madrun';
 
 export default {
     'test': () => `tape 'lib/**/*.spec.js'`,
-    'report': () => 'nyc report --reporter=lcov',
-    'coverage': () => 'nyc npm test',
+    'report': () => 'c8 report --reporter=lcov',
+    'coverage': () => 'c8 npm test',
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': async () => await run('watcher', `"${await run('test')}"`),
     
