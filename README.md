@@ -117,6 +117,7 @@ console.log(fileStream.size);
 - **data** - `stream`
 - **options** - `object` can contain:
   - `unzip` - unzip file content before writing
+  - `mode` - set permissions mode (optional)
 
 #### Example
 
