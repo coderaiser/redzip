@@ -29,6 +29,7 @@
     "once": "^1.4.0",
     "pipe-io": "^4.0.1",
     "readify": "^8.0.0",
+    "readzip": "^1.0.0",
     "trammel": "^5.0.0",
     "try-to-catch": "^3.0.0",
     "wraptile": "^3.0.0",
