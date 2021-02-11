@@ -1,6 +1,6 @@
 {
   "name": "redzip",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "main": "lib/redzip.js",
   "description": "work with files inside archives like with regular files",
   "author": "",
