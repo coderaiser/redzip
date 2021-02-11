@@ -3,7 +3,5 @@ node_modules
 npm-debug.log
 coverage
 yarn-error.log
-.nyc_output
 *.swp
 
-.putoutcache
