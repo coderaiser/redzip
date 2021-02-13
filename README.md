@@ -182,8 +182,12 @@ const dirPath = '/home/coderaiser/hello.zip/hello/';
 await list(dirPath);
 // returns
 [
-    'file1',
-    'file2',
+    '/Users/coderaiser/redzip/lib/local/fixture/list', {
+        date: '2021-02-13T16:21:01.410Z',
+        mode: 16_877,
+        name: 'list',
+        size: 64,
+    },
 ];
 ```
 
