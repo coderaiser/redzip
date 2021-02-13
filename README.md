@@ -169,6 +169,24 @@ const path = '/home/coderaiser/hello.zip/hello.txt';
 await remove(path);
 ```
 
+### list(path)
+
+- **path** - `string`
+
+#### Example
+
+```js
+import {list} from 'redzip';
+
+const dirPath = '/home/coderaiser/hello.zip/hello/';
+await list(dirPath);
+// returns
+[
+    'file1',
+    'file2',
+];
+```
+
 ## Related
 
 - [readify](https://github.com/coderaiser/readify "readify") - read directory content with file attributes: size, date, owner, mode
