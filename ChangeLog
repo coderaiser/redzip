@@ -1,3 +1,10 @@
+2021.02.14, v1.11.3
+
+fix:
+- fix(redzip) list: when path is file, return list with one file on it
+
+
+
 2021.02.14, v1.11.2
 
 fix:
