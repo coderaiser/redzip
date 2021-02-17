@@ -111,6 +111,23 @@ console.log(fileStream.size);
 - **options** - `object` can contain:
   - `type` - when "raw" returns not formatted result
 
+### readStat(path[, options])
+
+- **path** - `string`
+
+```js
+const stat = readStat('/hello/world.zip/readme.md');
+// returns
+({
+    "date": '2021-01-18T22:00:00.000Z',
+    "mode": 1_107_099_648,
+    "name": "readme.md",
+    "owner": 0,
+    "size": 0,
+    "type": "file",
+});
+```
+
 ### write(path[, data], options)
 
 - **path** - `string`
@@ -182,12 +199,7 @@ const dirPath = '/home/coderaiser/hello.zip/hello/';
 await list(dirPath);
 // returns
 [
-    '/Users/coderaiser/redzip/lib/local/fixture/list', {
-        date: '2021-02-13T16:21:01.410Z',
-        mode: 16_877,
-        name: 'list',
-        size: 64,
-    },
+    '/Users/coderaiser/hello.zip/hello/world.txt',
 ];
 ```
 
