@@ -48,7 +48,7 @@ console.log(dirStream.type);
 // outputs
 'directory';
 
-console.log(dirStream.size);
+console.log(dirStream.contentLength);
 // outputs
 280;
 
@@ -100,7 +100,7 @@ fileStream.pipe(process.stdout);
 // outputs
 'hello';
 
-console.log(fileStream.size);
+console.log(fileStream.contentLength);
 // outputs
 6;
 ```
