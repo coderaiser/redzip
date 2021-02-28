@@ -111,6 +111,17 @@ console.log(fileStream.contentLength);
 - **options** - `object` can contain:
   - `type` - when "raw" returns not formatted result
 
+```js
+const fileStream = readSize('/hello/world.zip/readme.md');
+
+fileStream.pipe(process.stdout);
+// outputs
+'10kb';
+
+fileStream.contentLength;
+// 4
+```
+
 ### readStat(path[, options])
 
 - **path** - `string`
