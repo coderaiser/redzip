@@ -28,7 +28,7 @@
     "format-io": "^2.0.0",
     "once": "^1.4.0",
     "pipe-io": "^4.0.1",
-    "readify": "^8.0.0",
+    "readify": "^9.0.0",
     "readzip": "^1.0.0",
     "totalist": "^2.0.0",
     "trammel": "^5.0.0",
