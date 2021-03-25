@@ -87,7 +87,7 @@ dirStream.files;
     mode: 0,
 }];
 
-dirStream.files.path;
+dirStream.path;
 // returns
 '/';
 
