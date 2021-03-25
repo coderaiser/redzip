@@ -170,8 +170,11 @@ await pullout(await read(path));
 'hello';
 
 import {createGzip} from 'zlib';
+
 const zipStream = Readable.from('hello').pipe(createGzip());
-await write(path, zipStream);
+await write(path, zipStream, {
+    unzip: true,
+});
 const readStream = await read(path);
 await pullout(readStream);
 // returns
