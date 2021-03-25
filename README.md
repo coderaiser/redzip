@@ -150,6 +150,7 @@ const stat = readStat('/hello/world.zip/readme.md');
 #### Example
 
 ```js
+import {Readable} from 'stream';
 import {write} from 'redzip';
 import pullout from 'pullout';
 
