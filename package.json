@@ -53,7 +53,7 @@
     "nodemon": "^2.0.2",
     "pullout": "^4.0.0",
     "putout": "^17.0.0",
-    "supertape": "^4.4.0"
+    "supertape": "^5.3.0"
   },
   "keywords": [
     "directory",
