@@ -12,7 +12,7 @@ export default {
     }),
     
     'watcher': () => 'nodemon -w test -w lib --exec',
-    'lint': () => 'putout .',
+    'lint': () => 'putout . --raw',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
     'fix:lint': () => run('lint', '--fix'),
