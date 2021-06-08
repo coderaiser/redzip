@@ -48,7 +48,7 @@
     "eslint-plugin-putout": "^7.0.0",
     "madrun": "^8.3.8",
     "memfs": "^3.2.0",
-    "mock-fs": "^4.13.0",
+    "mock-fs": "^5.0.0",
     "mock-require": "^3.0.1",
     "nodemon": "^2.0.2",
     "pullout": "^4.0.0",
