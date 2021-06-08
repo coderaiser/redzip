@@ -1,5 +1,5 @@
 {
-    "check-coverage": false,
+    "check-coverage": true,
     "all": true,
     "exclude": [
         "coverage",
