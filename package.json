@@ -4,10 +4,10 @@
   "main": "lib/redzip.js",
   "description": "work with files inside archives like with regular files",
   "author": "",
-  "homepage": "http://github.com/coderaiser/readzip",
+  "homepage": "http://github.com/coderaiser/redzip",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/readzip.git"
+    "url": "git://github.com/coderaiser/redzip.git"
   },
   "scripts": {
     "test": "madrun test",
