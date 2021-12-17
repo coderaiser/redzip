@@ -141,6 +141,8 @@ const stat = readStat('/hello/world.zip/readme.md');
 
 ### write(path[, data], options)
 
+When you need to save `string`, or `Buffer` use [Readable.from](https://nodejs.org/dist/latest-v17.x/docs/api/stream.html#streamreadablefromiterable-options).
+
 - **path** - `string`
 - **data** - `stream`
 - **options** - `object` can contain:
