@@ -181,12 +181,9 @@ await pullout(readStream);
 'hello';
 ```
 
-### remove(path[, data], options)
+### remove(path)
 
 - **path** - `string`
-- **data** - `stream`
-- **options** - `object` can contain:
-  - `unzip` - unzip file content before writing
 
 #### Example
 
