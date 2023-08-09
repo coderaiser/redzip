@@ -46,6 +46,7 @@ const dirStream = await redzip.read(dirPath, {
     sort,
     order,
 });
+
 console.log(dirStream.type);
 // outputs
 'directory';
@@ -120,7 +121,7 @@ fileStream.pipe(process.stdout);
 // outputs
 '10kb';
 
-fileStream.contentLength;// 4
+fileStream.contentLength; // 4
 ```
 
 ### readStat(path[, options])
@@ -179,6 +180,7 @@ import {createGzip} from 'zlib';
 const zipStream = Readable
     .from('hello')
     .pipe(createGzip());
+
 await write(path, zipStream, {
     unzip: true,
 });
