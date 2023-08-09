@@ -1,6 +1,7 @@
 {
   "name": "redzip",
   "version": "2.2.0",
+  "type": "commonjs",
   "main": "lib/redzip.js",
   "description": "work with files inside archives like with regular files",
   "author": "",
@@ -43,7 +44,7 @@
     "@iocmd/wait": "^2.1.0",
     "c8": "^8.0.1",
     "eslint": "^8.4.1",
-    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-putout": "^19.0.3",
     "madrun": "^9.3.1",
     "memfs": "^4.2.1",
