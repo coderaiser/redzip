@@ -10,13 +10,13 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 14.x
           - 16.x
-          - 17.x
+          - 18.x
+          - 20.x
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install -f
@@ -24,10 +24,12 @@ jobs:
       - run: npm run coverage
       - run: npm run report
       - name: Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v2
+        continue-on-error: true
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: EndBug/add-and-commit@v7
+      - uses: EndBug/add-and-commit@v9
         with:
           branch: master
           message: chore(${{ env.NAME }}) lint using actions
+        continue-on-error: true

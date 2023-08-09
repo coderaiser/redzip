@@ -41,7 +41,11 @@ const path = '/home/coderaiser/hello.zip/hello.txt';
 
 const redzip = require('redzip');
 
-const dirStream = await redzip.read(dirPath, {type, sort, order});
+const dirStream = await redzip.read(dirPath, {
+    type,
+    sort,
+    order,
+});
 console.log(dirStream.type);
 // outputs
 'directory';
@@ -53,7 +57,7 @@ console.log(dirStream.contentLength);
 dirStream.pipe(process.stdout);
 // outputs
 ({
-    path: "/",
+    path: '/',
     files: [{
         name: 'redzip.js',
         size: 4735,
@@ -116,8 +120,7 @@ fileStream.pipe(process.stdout);
 // outputs
 '10kb';
 
-fileStream.contentLength;
-// 4
+fileStream.contentLength;// 4
 ```
 
 ### readStat(path[, options])
@@ -126,14 +129,15 @@ fileStream.contentLength;
 
 ```js
 const stat = readStat('/hello/world.zip/readme.md');
+
 // returns
 ({
-    "date": '2021-01-18T22:00:00.000Z',
-    "mode": 1_107_099_648,
-    "name": "readme.md",
-    "owner": 0,
-    "size": 0,
-    "type": "file",
+    date: '2021-01-18T22:00:00.000Z',
+    mode: 1_107_099_648,
+    name: 'readme.md',
+    owner: 0,
+    size: 0,
+    type: 'file',
 });
 ```
 
@@ -161,6 +165,7 @@ await write(dirPath);
 
 const path = '/home/coderaiser/hello.zip/hello.txt';
 const writeStream = await write(path, Readable.from('hello'));
+
 await pullout(writeStream);
 // returns
 'save: ok("hello")';
@@ -171,7 +176,9 @@ await pullout(await read(path));
 
 import {createGzip} from 'zlib';
 
-const zipStream = Readable.from('hello').pipe(createGzip());
+const zipStream = Readable
+    .from('hello')
+    .pipe(createGzip());
 await write(path, zipStream, {
     unzip: true,
 });
