@@ -3,9 +3,6 @@
     "parserOptions": {
         "requireConfigFile": false
     },
-    "rules": {
-        "node/no-unsupported-features/node-builtins": "off"
-    },
     "extends": [
         "plugin:n/recommended",
         "plugin:putout/recommended"
