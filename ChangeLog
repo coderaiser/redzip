@@ -1,3 +1,16 @@
+2024.03.18, v3.0.2
+
+feature:
+- 356e6b6 redzip: trammel v6.0.0
+- 71c82c0 redzip: madrun v10.0.1
+- 3962b3a redzip: drop support of node < 18
+- ce55ca2 redzip: supertape v10.4.0
+- 5f558a7 redzip: putout v35.7.5
+- 47b77d7 redzip: eslint-plugin-putout v22.4.1
+- d37ab44 redzip: c8 v9.1.0
+- 512855e redzip: pullout v5.0.1
+- 3bd967e redzip: yauzl v3.1.2
+
 2023.08.10, v3.0.1
 
 feature:
