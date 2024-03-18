@@ -155,7 +155,7 @@ When you need to save `string`, or `Buffer` use [Readable.from](https://nodejs.o
 #### Example
 
 ```js
-import {Readable} from 'stream';
+import {Readable} from 'node:stream';
 import {write} from 'redzip';
 import pullout from 'pullout';
 
@@ -175,7 +175,7 @@ await pullout(await read(path));
 // returns
 'hello';
 
-import {createGzip} from 'zlib';
+import {createGzip} from 'node:zlib';
 
 const zipStream = Readable
     .from('hello')

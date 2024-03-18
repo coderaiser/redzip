@@ -10,16 +10,19 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 16.x
           - 18.x
           - 20.x
+          - 21.x
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -f
+      - run: bun i -f --no-save
       - run: npm run fix:lint
       - run: npm run coverage
       - run: npm run report
@@ -31,5 +34,5 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         with:
           branch: master
-          message: 'chore: ${{ env.NAME }}: lint using actions ☘️'
+          message: "chore: ${{ env.NAME }}: lint using actions ☘️"
         continue-on-error: true
