@@ -29,7 +29,7 @@
     "format-io": "^2.0.0",
     "once": "^1.4.0",
     "pipe-io": "^4.0.1",
-    "readify": "^9.0.0",
+    "readify": "^10.0.0",
     "readzip": "^2.0.0",
     "totalist": "^3.0.1",
     "trammel": "^6.0.0",
