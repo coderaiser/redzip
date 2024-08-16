@@ -1,3 +1,10 @@
+2024.08.16, v3.0.4
+
+feature:
+- 8df93b5 redzip: c8 v10.1.2
+- cc8b0ce redzip: eslint v9.9.0
+- f2f47e1 redzip: putout v36.0.4
+
 2024.03.29, v3.0.3
 
 feature:
