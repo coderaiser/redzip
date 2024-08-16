@@ -24,7 +24,7 @@
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
-    "@cloudcmd/formatify": "^1.0.1",
+    "@cloudcmd/formatify": "^2.0.1",
     "@cloudcmd/sortify": "^2.0.1",
     "format-io": "^2.0.0",
     "once": "^1.4.0",
