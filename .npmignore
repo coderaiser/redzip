@@ -7,3 +7,4 @@ fixture
 *.swp
 yarn-error.log
 
+*.config.*
