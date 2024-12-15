@@ -51,7 +51,7 @@
     "mock-require": "^3.0.1",
     "nodemon": "^3.0.1",
     "pullout": "^5.0.1",
-    "putout": "^36.0.4",
+    "putout": "^36.18.1",
     "supertape": "^10.4.0"
   },
   "keywords": [
