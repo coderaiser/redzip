@@ -8,7 +8,7 @@
   "homepage": "http://github.com/coderaiser/redzip",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/redzip.git"
+    "url": "git+https://github.com/coderaiser/redzip.git"
   },
   "scripts": {
     "test": "madrun test",
@@ -51,7 +51,7 @@
     "mock-require": "^3.0.1",
     "nodemon": "^3.0.1",
     "pullout": "^5.0.1",
-    "putout": "^36.18.1",
+    "putout": "^37.1.0",
     "supertape": "^10.4.0"
   },
   "keywords": [
