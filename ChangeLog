@@ -1,3 +1,23 @@
+2026.01.31, v4.0.0
+
+feature:
+- 08c8a68 redzip: drop support of node < 22
+- 3aec079 redzip: migrate to ESM
+- 7059257 redzip: zip: get rid of mock-require
+- c5326f3 redzip: zip: get rid of mock-require
+- a866b39 vfs: read: get rid of mock-require
+- edd168e redzip: vfs: list: get rid of mock-require
+- df80143 redzip: redfs: get rid of mock-require
+- e15be36 redzip: loca: get rid of mock-require
+- 473851b redzip: try-to-catch v4.0.4
+- d3075f7 redzip: supertape v12.2.0
+- 396491d redzip: putout v41.15.0
+- 1710c13 redzip: madrun v12.1.3
+- 881e3f7 redzip: eslint-plugin-putout v30.0.1
+- 2283519 redzip: putout v37.1.1
+- 6da11c0 redzip: eslint-plugin-putout v23.3.0
+- 11e5e56 redzip: yazl v3.3.1
+
 2024.08.16, v3.0.5
 
 feature:
