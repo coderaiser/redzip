@@ -32,14 +32,13 @@ npm i redzip
 #### Example
 
 ```js
+import * as redzip from 'redzip';
+
 const sort = 'size';
 const order = 'desc';
 const type = 'raw';
-
 const dirPath = '/home/coderaiser/hello.zip/hello/';
 const path = '/home/coderaiser/hello.zip/hello.txt';
-
-import * as redzip from 'redzip';
 
 const dirStream = await redzip.read(dirPath, {
     type,
