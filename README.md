@@ -39,7 +39,7 @@ const type = 'raw';
 const dirPath = '/home/coderaiser/hello.zip/hello/';
 const path = '/home/coderaiser/hello.zip/hello.txt';
 
-const redzip = require('redzip');
+import * as redzip from 'redzip';
 
 const dirStream = await redzip.read(dirPath, {
     type,

@@ -1,16 +1,3 @@
-'use strict';
+import {safeAlign} from 'eslint-plugin-putout';
 
-const {defineConfig} = require('eslint/config');
-const {safeAlign} = require('eslint-plugin-putout');
-const parser = require('@babel/eslint-parser');
-
-module.exports = defineConfig([
-    safeAlign, {
-        languageOptions: {
-            parser,
-            parserOptions: {
-                requireConfigFile: false,
-            },
-        },
-    },
-]);
+export default safeAlign;
