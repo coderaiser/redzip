@@ -34,5 +34,5 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         with:
           branch: master
-          message: "chore: ${{ env.NAME }}: lint using actions ☘️"
+          message: "chore: ${{ env.NAME }}: actions: lint ☘️"
         continue-on-error: true
