@@ -150,6 +150,7 @@ When you need to save `string`, or `Buffer` use [Readable.from](https://nodejs.o
 - **options** - `object` can contain:
   - `unzip` - unzip file content before writing
   - `mode` - set permissions mode (optional)
+  - `date` - date of modication
 
 #### Example
 
