@@ -48,7 +48,7 @@
     "mock-fs": "^5.0.0",
     "nodemon": "^3.0.1",
     "pullout": "^5.0.1",
-    "putout": "^41.15.0",
+    "putout": "^42.0.12",
     "redlint": "^5.4.0",
     "supertape": "^12.2.0"
   },
