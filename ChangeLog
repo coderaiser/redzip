@@ -1,3 +1,9 @@
+2026.02.25, v4.3.0
+
+feature:
+- 9e9f975 redzip: keep mtime of directory (coderaiser/cloudcmd#457)
+- 317f8cd redzip: c8 v11.0.0
+
 2026.02.24, v4.2.0
 
 feature:
