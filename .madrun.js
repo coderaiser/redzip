@@ -7,7 +7,7 @@ export default {
     'watch:coverage': () => run('watcher', 'npm run coverage'),
     'watch:test': async () => await run('watcher', `"${await run('test')}"`),
     'watcher': () => 'nodemon -w test -w lib --exec',
-    'lint': () => 'redlint scan && putout .',
+    'lint': () => 'redlint fix && putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
     'fix:lint': () => 'redlint fix && putout . --fix',
