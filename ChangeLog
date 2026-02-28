@@ -1,3 +1,8 @@
+2026.02.28, v4.6.0
+
+feature:
+- 1f8fa48 redzip: vfs: local: date: parallel
+
 2026.02.26, v4.5.1
 
 feature:
