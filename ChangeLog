@@ -1,3 +1,9 @@
+2026.03.17, v4.6.1
+
+feature:
+- 9b8dbb9 redzip: @cloudcmd/formatify v3.0.0
+- 78c8580 redzip: readify v11.0.0
+
 2026.02.28, v4.6.0
 
 feature:
