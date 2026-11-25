@@ -51,10 +51,12 @@ console.log(dirStream.type);
 'directory';
 
 console.log(dirStream.contentLength);
+
 // outputs
 280;
 
 dirStream.pipe(process.stdout);
+
 // outputs
 ({
     path: '/',
@@ -103,6 +105,7 @@ fileStream.pipe(process.stdout);
 'hello';
 
 console.log(fileStream.contentLength);
+
 // outputs
 6;
 ```

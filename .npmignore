@@ -2,7 +2,7 @@
 *.swp
 *.config.*
 *.log
-*.loc
+*.lock
 
 .*
 
