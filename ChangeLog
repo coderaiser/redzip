@@ -1,3 +1,9 @@
+2026.11.25, v4.6.2
+
+feature:
+- 7416d2b redzip: supertape v13.6.2
+- 65b886b redzip: @cloudcmd/sortify v3.1.0
+
 2026.03.17, v4.6.1
 
 feature:

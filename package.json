@@ -1,6 +1,6 @@
 {
   "name": "redzip",
-  "version": "4.6.1",
+  "version": "4.6.2",
   "type": "module",
   "main": "lib/redzip.js",
   "imports": {
