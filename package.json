@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@cloudcmd/formatify": "^3.0.0",
-    "@cloudcmd/sortify": "^2.0.1",
+    "@cloudcmd/sortify": "^3.1.0",
     "format-io": "^2.0.0",
     "once": "^1.4.0",
     "pipe-io": "^4.0.1",
