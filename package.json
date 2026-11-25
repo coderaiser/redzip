@@ -3,6 +3,9 @@
   "version": "4.6.1",
   "type": "module",
   "main": "lib/redzip.js",
+  "imports": {
+    "#mock-file": "./test/mock-file.js"
+  },
   "description": "work with files inside archives like with regular files",
   "author": "",
   "homepage": "http://github.com/coderaiser/redzip",
@@ -44,7 +47,6 @@
     "eslint-plugin-putout": "^31.0.1",
     "madrun": "^13.0.0",
     "memfs": "^4.2.1",
-    "mock-fs": "^5.0.0",
     "nodemon": "^3.0.1",
     "pullout": "^5.0.1",
     "putout": "^42.0.12",
